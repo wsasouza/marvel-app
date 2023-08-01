@@ -8,7 +8,7 @@ export function Footer() {
         <h2 className="text-center text-4xl lg:text-start">Marvel-App</h2>
         <Molecule.SocialLinkGroup />
       </div>
-      <div className="mt-4 flex flex-col items-start justify-center gap-1 p-4 lg:items-center">
+      <div className="mt-4 flex flex-col items-center justify-center gap-1 p-4">
         <p className="font-display text-[12px] ">
           Data provided by
           <a
