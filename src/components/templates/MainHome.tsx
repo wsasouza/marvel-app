@@ -8,7 +8,7 @@ import { Organism } from '../organisms'
 export function MainHome() {
   const { page, query, setPage } = useCharactersStore()
 
-  const { data } = useFetchAllCharacters({
+  const { data, isLoading } = useFetchAllCharacters({
     nameStartsWith: query,
     page,
   })
@@ -27,12 +27,18 @@ export function MainHome() {
       <Organism.Header />
       <main className="mx-auto min-h-screen max-w-7xl px-4 pb-4 pt-32">
         <Molecule.InfoPage title="Personagens" countCharacters={total} />
-        <Molecule.CardsContainer characters={characters} />
-        <Atom.Pagination
-          setPage={setPage}
-          pageCount={pageCount}
-          pageCurrent={page}
-        />
+        {isLoading ? (
+          <Molecule.SkeletonContainer count={8} />
+        ) : (
+          <>
+            <Molecule.CardsContainer characters={characters} />
+            <Atom.Pagination
+              setPage={setPage}
+              pageCount={pageCount}
+              pageCurrent={page}
+            />
+          </>
+        )}
       </main>
       <Organism.Footer />
     </div>

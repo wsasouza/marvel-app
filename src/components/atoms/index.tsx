@@ -6,6 +6,7 @@ import { Counter } from './Counter'
 import { SocialLink } from './SocialLink'
 import { InfoCharacter } from './InfoCharacter'
 import { CardComic } from './CardComic'
+import { SkeletonItem } from './SkeletonItem'
 
 export const Atom = {
   Input,
@@ -16,4 +17,5 @@ export const Atom = {
   SocialLink,
   InfoCharacter,
   CardComic,
+  SkeletonItem,
 }
